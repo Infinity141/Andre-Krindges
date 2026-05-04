@@ -1,0 +1,24 @@
+[Unit]
+Decription=Worker Python para Operacoes
+After=network.target
+
+[Service]
+#O usuário que tem acesso a pasta com o worker.py
+User=root
+WorkingDirectory=/root/area_processamento
+
+
+#Caminho para o Python dentro do ambiente virtual
+ExecStart=/root/area_processamento/venv/bin/python3 worker.py
+
+#Reinicia o script automaticamente se ele falhar ou o computador desligar
+Restart=always
+RestartSec=5
+
+#Onde os erros e mensagens(print) serão gravados
+StandardOutput=append:/root/area_processamento/worker.log
+StandardError=append:/root/area_processamento/worker.log
+
+
+[Install]
+WantedBy=multi-user.target
