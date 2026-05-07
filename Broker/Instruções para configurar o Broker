@@ -1,0 +1,13 @@
+
+1.Instalar e verificar a ativação do Redis.
+  sudo apt install redis-server
+  sudo systemctl status redis
+
+
+2. Por padrão o redis só aceita conexões vindas da própria máquina hospedeira, para isso precisamos mudar a 'bin' dele nas configurações.
+  sudo nano /etc/redis/redis.conf
+
+  2.2. Procure e altere a linha 'bind 127.0.0.1 ::1' para 'bind 0.0.0.0' 
+  2.3. Procure por '# requirepass foobared', remova o '#' e coloque sua senha: requirepass sua_senha_forte
+
+3. Reinicie o sistema: sudo systemctl restart redis
