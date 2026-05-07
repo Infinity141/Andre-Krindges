@@ -1,1 +1,7 @@
-Descobrir como criar uma pasta compartilhada para todos os workers e master para matrizes grandes.
+Um problema que me deparei é quanto ao tamanho das matrizes. Matrizes pequenas podem ser passadas dentro do código para os workes e o broker, porém matrizes 
+maiores e complexas necessitam de mais espaço e tempo.
+Se eu enviar uma 4 matrizes de 500Mb, precisarei de 2G, agora imagina 4 de 20G, precisaria de 80G.
+
+Para isso descobri que posso criar uma pasta compartilhada dentro do Master que ela pode ser acessada pelos Workers, planejo explorar essa possibilidade, mas tenho
+que ver qual será o tamanho da RAM do computador definitivo do Broker, se for gigante, talvez não precise, ou talvez crio dentro dele a pasta, não sei como 
+será.
