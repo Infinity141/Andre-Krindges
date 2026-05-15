@@ -1,0 +1,9 @@
+Quando for formatar os computadores lembre-se que a versão do Debian deve ser 13.4.
+Sempre selecione a opção 'Brasil' quando necessário.
+O usuário será: Liama
+A senha usada, tanto para o Liama quanto para o root, será: npk250515
+Ao final selecione a opção de instalar também ssh no computador, não conseguir, relaxa que é só colocar no terminal:
+  sudo apt update
+  sudo apt install openssh-server -y
+e veja se o ssh está operando:
+  sudo systemctl status ssh
